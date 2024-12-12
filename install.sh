@@ -12,17 +12,15 @@ print_status() {
 
 # Get the localized Applications folder path
 get_applications_path() {
-    # First try to get the localized path
     local apps_path="$(osascript -e 'POSIX path of (path to applications folder)')"
     
     if [ -z "$apps_path" ]; then
-        # Fallback to checking common locations
         if [ -d "/Applications" ]; then
             echo "/Applications"
         elif [ -d "/Programme" ]; then
             echo "/Programme"
         else
-            echo "/Applications"  # Default fallback
+            echo "/Applications"
         fi
     else
         echo "$apps_path"
@@ -77,18 +75,26 @@ build_application() {
     fi
 }
 
-create_applications_symlink() {
-    print_status "Creating application symlink..." "$YELLOW"
+install_application() {
+    print_status "Installing application..." "$YELLOW"
     
     # Get the localized Applications folder path
     APPLICATIONS_PATH=$(get_applications_path)
     print_status "Using Applications folder: $APPLICATIONS_PATH" "$YELLOW"
     
     if [ -d "dist/SMB Manager.app" ]; then
-        mkdir -p "$APPLICATIONS_PATH"
-        rm -f "$APPLICATIONS_PATH/SMB Manager.app"
-        ln -s "$(pwd)/dist/SMB Manager.app" "$APPLICATIONS_PATH/"
-        print_status "Application symlink created in $APPLICATIONS_PATH!" "$GREEN"
+        # Remove existing application if it exists
+        rm -rf "$APPLICATIONS_PATH/SMB Manager.app"
+        
+        # Copy the application
+        cp -R "dist/SMB Manager.app" "$APPLICATIONS_PATH/"
+        
+        if [ $? -eq 0 ]; then
+            print_status "Application installed successfully in $APPLICATIONS_PATH!" "$GREEN"
+        else
+            print_status "Failed to copy application to $APPLICATIONS_PATH" "$RED"
+            exit 1
+        fi
     else
         print_status "Application bundle not found in dist directory" "$RED"
         exit 1
@@ -131,7 +137,7 @@ main() {
     fi
     
     build_application
-    create_applications_symlink
+    install_application
     
     cd - > /dev/null
     rm -rf "$tmp_dir"
@@ -139,7 +145,7 @@ main() {
     # Get the localized path for the success message
     APPLICATIONS_PATH=$(get_applications_path)
     print_status "Installation complete! You can find SMB Manager in your $APPLICATIONS_PATH folder." "$GREEN"
-    print_status "To start the application, open finder and navigate to $APPLICATIONS_PATH/SMB Manager.app" "$GREEN"
+    print_status "To start the application, open Finder and navigate to $APPLICATIONS_PATH/SMB Manager.app" "$GREEN"
 }
 
 main
