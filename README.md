@@ -44,7 +44,7 @@ Simple GUI
 
 1. Download the installer script:
 ```bash
-curl -O https://raw.githubusercontent.com/yourusername/smb-manager/main/install.sh
+curl -O https://raw.githubusercontent.com/Obili69/SMB-manager/refs/heads/main/install.sh
 ```
 
 2. Make the script executable:
@@ -72,7 +72,7 @@ If you prefer to install manually or need to customize the installation:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/smb-manager
+git clone https://github.com/obili69/smb-manager
 cd smb-manager
 ```
 
