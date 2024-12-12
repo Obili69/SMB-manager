@@ -19,6 +19,8 @@ OPTIONS = {
         'keyring',
         'src',
         'tkinter'
+        'keyring.backends',  # Add this
+        'pkg_resources'      #
     ],
     'includes': [
         'tkinter',
@@ -33,6 +35,7 @@ OPTIONS = {
         'pathlib',
         'logging',
         'datetime'
+        'platform'   
     ],
     'excludes': ['PyQt5', 'PyQt6', 'PySide2', 'PySide6', 'wx'],
     'resources': ['src'],

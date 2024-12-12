@@ -32,9 +32,7 @@ install_python_dependencies() {
     # Upgrade pip and install build tools
     python3 -m pip install --upgrade pip
     python3 -m pip install --upgrade setuptools wheel
-
-    # Install dependencies with PEP 517
-    python3 -m pip install --use-pep517 \
+    python3 -m pip install --no-cache-dir \
         rumps \
         keyring \
         pyobjc-core \
