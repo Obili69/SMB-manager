@@ -18,7 +18,7 @@ OPTIONS = {
         'rumps',
         'keyring',
         'src',
-        'tkinter'
+        'tkinter',
         'keyring.backends',  # Add this
         'pkg_resources'      #
     ],
@@ -34,7 +34,7 @@ OPTIONS = {
         'sys',
         'pathlib',
         'logging',
-        'datetime'
+        'datetime',
         'platform'   
     ],
     'excludes': ['PyQt5', 'PyQt6', 'PySide2', 'PySide6', 'wx'],
