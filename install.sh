@@ -12,8 +12,10 @@ print_status() {
 
 check_python_version() {
     if command -v python3 >/dev/null 2>&1; then
-        python_version=$(python3 -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
-        if (( $(echo "$python_version >= 3.6" | bc -l) )); then
+        major=$(python3 -c 'import sys; print(sys.version_info.major)')
+        minor=$(python3 -c 'import sys; print(sys.version_info.minor)')
+        
+        if [ "$major" -eq 3 ] && [ "$minor" -ge 6 ] || [ "$major" -gt 3 ]; then
             return 0
         fi
     fi
@@ -77,6 +79,9 @@ main() {
         exit 1
     fi
     
+    python_version=$(python3 --version)
+    print_status "Detected Python version: $python_version" "$YELLOW"
+    
     if ! check_python_version; then
         print_status "Python 3.6 or later is required. Please install it first." "$RED"
         exit 1
@@ -86,7 +91,7 @@ main() {
     cd "$tmp_dir"
     
     print_status "Cloning repository..." "$YELLOW"
-    git clone https://github.com/yourusername/smb-manager .
+    git clone https://github.com/Obili69/SMB-manager.git .
     
     if [ $? -ne 0 ]; then
         print_status "Failed to clone repository" "$RED"
@@ -110,4 +115,5 @@ main() {
     print_status "Installation complete! You can find SMB Manager in your Applications folder." "$GREEN"
     print_status "To start the application, open finder and navigate to ~/Applications/SMB Manager.app" "$GREEN"
 }
+
 main
