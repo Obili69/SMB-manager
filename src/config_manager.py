@@ -15,7 +15,7 @@ class ConfigManager:
             "port": "8445", 
             "shares": [], 
             "autostart": False,
-            "use_tunnel": True  # Default to using tunnel
+            "use_tunnel": True
         }
 
     def save_config(self, config):

@@ -1,6 +1,3 @@
-#!/bin/bash
-
-# Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -32,6 +29,9 @@ install_python_dependencies() {
     # Upgrade pip and install build tools
     python3 -m pip install --upgrade pip
     python3 -m pip install --upgrade setuptools wheel
+    
+    # Clean pip cache and install dependencies
+    python3 -m pip cache purge
     python3 -m pip install --no-cache-dir \
         rumps \
         keyring \
@@ -61,7 +61,11 @@ clean_build_directory() {
     # Remove .DS_Store files
     find . -name ".DS_Store" -delete
     # Remove old build artifacts
-    rm -rf build dist *.pyc __pycache__ .eggs *.egg-info
+    rm -rf build dist
+    rm -rf *.pyc __pycache__
+    rm -rf .eggs *.egg-info
+    # Clean pip cache
+    python3 -m pip cache purge
 }
 
 build_application() {
@@ -163,3 +167,92 @@ main() {
 }
 
 main
+
+# File: setup.py
+from setuptools import setup, find_packages
+
+setup(
+    name="smb-manager",
+    version="1.0.0",
+    packages=find_packages(),
+    install_requires=[
+        'rumps',
+        'keyring',
+    ],
+    entry_points={
+        'console_scripts': [
+            'smb-manager=src.main:main',
+        ],
+    },
+    author="Your Name",
+    author_email="your.email@example.com",
+    description="SMB Connection Manager for macOS",
+    long_description=open('README.md').read(),
+    long_description_content_type="text/markdown",
+    url="https://github.com/yourusername/smb-manager",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: MacOS :: MacOS X",
+    ],
+    python_requires='>=3.6',
+)
+
+# File: setup_app.py
+from setuptools import setup
+
+APP = ['src/main.py']
+DATA_FILES = []
+OPTIONS = {
+    'argv_emulation': True,
+    'plist': {
+        'LSUIElement': True,
+        'LSBackgroundOnly': False,
+        'CFBundleName': "SMB Manager",
+        'CFBundleDisplayName': "SMB Manager",
+        'CFBundleIdentifier': "com.smbmanager.app",
+        'CFBundleVersion': "1.0.0",
+        'CFBundleShortVersionString': "1.0.0",
+        'NSHighResolutionCapable': True,
+    },
+    'packages': [
+        'rumps',
+        'keyring',
+        'tkinter',
+        'src'
+    ],
+    'includes': [
+        'tkinter',
+        'tkinter.ttk',
+        'tkinter.messagebox',
+        'tkinter.filedialog',
+        '_tkinter',
+        'json',
+        'subprocess',
+        'os',
+        'sys',
+        'pathlib',
+        'logging',
+        'datetime',
+        'keyring.backends',
+        'pkg_resources'
+    ],
+    'excludes': ['PyQt5', 'PyQt6', 'PySide2', 'PySide6', 'wx'],
+    'resources': ['src'],
+    'site_packages': True,
+    'strip': False,
+    'arch': 'universal2',
+    'semi_standalone': False
+}
+
+setup(
+    app=APP,
+    name="SMB Manager",
+    data_files=DATA_FILES,
+    options={'py2app': OPTIONS},
+    setup_requires=['py2app'],
+    install_requires=[
+        'rumps',
+        'keyring',
+    ],
+)
