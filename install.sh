@@ -32,19 +32,15 @@ install_python_dependencies() {
     # Upgrade pip and install build tools
     python3 -m pip install --upgrade pip
     python3 -m pip install --upgrade setuptools wheel
-    
-    # Install py2app separately first
-    python3 -m pip install py2app==0.28.6
-    
-    # Install main dependencies
-    python3 -m pip install \
+
+    # Install dependencies with PEP 517
+    python3 -m pip install --use-pep517 \
         rumps \
         keyring \
         pyobjc-core \
         pyobjc-framework-Cocoa \
         pyobjc-framework-Security \
-        setuptools \
-        wheel
+        py2app==0.28.6
     
     if [ $? -eq 0 ]; then
         print_status "Python dependencies installed successfully!" "$GREEN"
@@ -62,6 +58,14 @@ install_cloudflared() {
     brew install cloudflare/cloudflare/cloudflared
 }
 
+clean_build_directory() {
+    print_status "Cleaning build directory..." "$YELLOW"
+    # Remove .DS_Store files
+    find . -name ".DS_Store" -delete
+    # Remove old build artifacts
+    rm -rf build dist *.pyc __pycache__ .eggs *.egg-info
+}
+
 build_application() {
     print_status "Building SMB Manager application..." "$YELLOW"
     
@@ -69,11 +73,11 @@ build_application() {
         source venv/bin/activate
     fi
     
-    # Clean previous builds
-    rm -rf build dist
+    # Clean before building
+    clean_build_directory
     
-    # Build the application
-    python3 setup_app.py py2app -A
+    # Build the application without code signing
+    python3 setup_app.py py2app --no-strip
     
     if [ $? -eq 0 ]; then
         print_status "Application built successfully!" "$GREEN"
@@ -86,10 +90,12 @@ build_application() {
 install_application() {
     print_status "Installing application..." "$YELLOW"
     
-    # Get the localized Applications folder path
     APPLICATIONS_PATH="/Applications"
     
     if [ -d "dist/SMB Manager.app" ]; then
+        # Remove .DS_Store files from the built app
+        find "dist/SMB Manager.app" -name ".DS_Store" -delete
+        
         # Remove existing application if it exists
         rm -rf "$APPLICATIONS_PATH/SMB Manager.app"
         
@@ -97,6 +103,7 @@ install_application() {
         cp -R "dist/SMB Manager.app" "$APPLICATIONS_PATH/"
         
         if [ $? -eq 0 ]; then
+            # Set permissions
             chmod -R 755 "$APPLICATIONS_PATH/SMB Manager.app"
             print_status "Application installed successfully in $APPLICATIONS_PATH!" "$GREEN"
         else
@@ -135,6 +142,9 @@ main() {
         print_status "Failed to clone repository" "$RED"
         exit 1
     fi
+    
+    # Clean any existing .DS_Store files
+    clean_build_directory
     
     install_python_dependencies
     

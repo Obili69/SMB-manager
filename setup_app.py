@@ -14,7 +14,12 @@ OPTIONS = {
         'CFBundleShortVersionString': "1.0.0",
         'NSHighResolutionCapable': True,
     },
-    'packages': ['rumps', 'keyring', 'src', 'tkinter'],
+    'packages': [
+        'rumps',
+        'keyring',
+        'src',
+        'tkinter'
+    ],
     'includes': [
         'tkinter',
         'tkinter.ttk',
@@ -26,15 +31,15 @@ OPTIONS = {
         'os',
         'sys',
         'pathlib',
-        'logging'
+        'logging',
+        'datetime'
     ],
     'excludes': ['PyQt5', 'PyQt6', 'PySide2', 'PySide6', 'wx'],
     'resources': ['src'],
-    'frameworks': [],
     'site_packages': True,
-    'strip': False,  # Changed to False to help with debugging
+    'strip': False,
     'arch': 'universal2',
-    'semi_standalone': False,  # Changed to False for full bundling
+    'semi_standalone': False
 }
 
 setup(
