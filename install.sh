@@ -24,8 +24,8 @@ install_python_dependencies() {
     print_status "Installing Python dependencies..." "$YELLOW"
     python3 -m venv venv
     source venv/bin/activate
-    pip install --upgrade pip
-    pip install rumps keyring py2app setuptools wheel
+    python3 -m pip install --upgrade pip
+    python3 -m pip install rumps keyring py2app setuptools wheel
     if [ $? -eq 0 ]; then
         print_status "Python dependencies installed successfully!" "$GREEN"
     else
@@ -47,7 +47,7 @@ build_application() {
     if [[ "$VIRTUAL_ENV" == "" ]]; then
         source venv/bin/activate
     fi
-    python setup_app.py py2app
+    python3 setup_app.py py2app
     if [ $? -eq 0 ]; then
         print_status "Application built successfully!" "$GREEN"
     else
