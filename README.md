@@ -24,6 +24,12 @@ A powerful and user-friendly macOS application that provides simple management o
   - Launch at login option
   - Native SMB mounting using system commands
 
+## Images
+Streamlined integration
+<img width="865" alt="Screenshot 2024-12-12 at 11 59 44" src="https://github.com/user-attachments/assets/1a8cdc59-a5c0-464f-b711-e840b6f6d491" />
+Simple GUI
+<img width="936" alt="Screenshot 2024-12-12 at 12 00 00" src="https://github.com/user-attachments/assets/fba6af53-8d7b-4ccf-aa09-fa38e521f0d7" />
+
 ## Prerequisites
 
 - macOS 10.13 or later
