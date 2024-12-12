@@ -81,14 +81,6 @@ app.mainloop()
             rumps.notification("SMB Manager", "Error", error_msg)
 
     def connect_all(self, _):
-        # Rest of the implementation remains the same...
-        pass
-
-    def disconnect_all(self, _):
-        # Rest of the implementation remains the same...
-        pass
-
-    def connect_all(self, _):
         hostname = self.config.get("hostname", "")
         port = self.config.get("port", "8445")
         
@@ -99,7 +91,9 @@ app.mainloop()
         success_count = 0
         error_messages = []
         
-        for share in self.config.get("shares", []):
+        shares = self.config.get("shares", [])
+        
+        for i, share in enumerate(shares, 1):
             username = share["username"]
             share_path = share["share"]
             mount_point = share.get("mount_point", f"/Volumes/{os.path.basename(share_path)}")
@@ -116,12 +110,19 @@ app.mainloop()
             
             if success:
                 success_count += 1
+                rumps.notification("SMB Manager", "Progress", 
+                                f"Mounted {i}/{len(shares)}: {share_path}")
             else:
                 error_messages.append(f"Failed to mount {share_path}: {error}")
+            
+            # Add 5 second delay between mounts, but not after the last one
+            if i < len(shares):
+                import time
+                time.sleep(2)  # 5 second delay
         
         if success_count > 0:
             rumps.notification("SMB Manager", "Success", 
-                             f"Mounted {success_count} share{'s' if success_count > 1 else ''}")
+                            f"Mounted {success_count} share{'s' if success_count > 1 else ''}")
         if error_messages:
             rumps.notification("SMB Manager", "Errors Occurred", "\n".join(error_messages[:3]))
 

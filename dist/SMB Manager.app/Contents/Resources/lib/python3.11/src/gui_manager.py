@@ -579,7 +579,7 @@ class GUIManager(tk.Tk):
         
 
     def connect_all(self):
-        """Connect all configured shares"""
+        """Connect all configured shares with delay between each"""
         hostname = self.hostname_var.get()
         port = self.port_var.get()
         
@@ -590,7 +590,12 @@ class GUIManager(tk.Tk):
         success_count = 0
         error_messages = []
         
-        for share in self.config.get("shares", []):
+        # Get all shares
+        shares = self.config.get("shares", [])
+        total_shares = len(shares)
+        
+        # Show progress
+        for i, share in enumerate(shares, 1):
             username = share["username"]
             share_path = share["share"]
             mount_point = share.get("mount_point", f"/Volumes/{os.path.basename(share_path)}")
@@ -607,8 +612,13 @@ class GUIManager(tk.Tk):
             
             if success:
                 success_count += 1
+                messagebox.showinfo("Progress", f"Mounted {i}/{total_shares}: {share_path}")
             else:
                 error_messages.append(f"Failed to mount {share_path}: {error}")
+            
+            # Add 5 second delay between mounts, but not after the last one
+            if i < total_shares:
+                self.after(2000)  # 5000 milliseconds = 5 seconds
         
         self.refresh_shares_list()
         
@@ -619,5 +629,4 @@ class GUIManager(tk.Tk):
             messagebox.showinfo("Mount Status", message)
         elif error_messages:
             messagebox.showerror("Mount Status", "\n".join(error_messages))
-    
-     
+        

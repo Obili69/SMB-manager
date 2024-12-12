@@ -620,37 +620,13 @@
 		<data>
 		dyLI+XxQ0tdP/bluLR1vILC173g=
 		</data>
+		<key>Resources/lib/python3.11/src/.DS_Store</key>
+		<data>
+		G4G0uTIrpLPeomeT59mjnBUe+ys=
+		</data>
 		<key>Resources/lib/python3.11/src/__init__.py</key>
 		<data>
 		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
-		</data>
-		<key>Resources/lib/python3.11/src/__pycache__/__init__.cpython-311.pyc</key>
-		<data>
-		/CyV7dNZ9MG9luFGU8i73UYbNWs=
-		</data>
-		<key>Resources/lib/python3.11/src/__pycache__/config_manager.cpython-311.pyc</key>
-		<data>
-		pSjwAyTtPzXNUq/UQgt8mMuXJrg=
-		</data>
-		<key>Resources/lib/python3.11/src/__pycache__/dialogs.cpython-311.pyc</key>
-		<data>
-		TlXVis5BaI+XgBOD/w0pC5mkccM=
-		</data>
-		<key>Resources/lib/python3.11/src/__pycache__/gui_manager.cpython-311.pyc</key>
-		<data>
-		g1fzhHnlTm6r4Ur2HgPKGKiE7C8=
-		</data>
-		<key>Resources/lib/python3.11/src/__pycache__/main.cpython-311.pyc</key>
-		<data>
-		ZPjlUUzevrRu56CmzSubUszZmnk=
-		</data>
-		<key>Resources/lib/python3.11/src/__pycache__/menubar_app.cpython-311.pyc</key>
-		<data>
-		8dAMZAdT3F20MutGQ4VhL/n4m2U=
-		</data>
-		<key>Resources/lib/python3.11/src/__pycache__/mount_manager.cpython-311.pyc</key>
-		<data>
-		r/10JolrR13O1tfkuFIH2Vy/mSI=
 		</data>
 		<key>Resources/lib/python3.11/src/config_manager.py</key>
 		<data>
@@ -662,7 +638,7 @@
 		</data>
 		<key>Resources/lib/python3.11/src/gui_manager.py</key>
 		<data>
-		fajS8fX0HkY3WcFJ980tysjrFVs=
+		YXghf7pnRxp5bkyx1Lb3Pb2XQ4I=
 		</data>
 		<key>Resources/lib/python3.11/src/main.py</key>
 		<data>
@@ -670,11 +646,11 @@
 		</data>
 		<key>Resources/lib/python3.11/src/menubar_app.py</key>
 		<data>
-		8T6bQ9b4bHr5EMJ5i3h8/1sXu+U=
+		DzA14ACoEww5F2fRDoMQG4hfH+M=
 		</data>
 		<key>Resources/lib/python3.11/src/mount_manager.py</key>
 		<data>
-		C+G+b1AL+yo5OLkdRKndHbNyNrU=
+		yiXQJ1ukslE7UYhHzXDtGylFcRc=
 		</data>
 		<key>Resources/lib/python3.11/tkinter/__init__.py</key>
 		<data>
@@ -1078,7 +1054,7 @@
 		</data>
 		<key>Resources/lib/python311.zip</key>
 		<data>
-		i04ejetsAIkujK0e1T1BSrW2XZM=
+		XaBVdWVoFHkXROEmv/TBFGuzAlA=
 		</data>
 		<key>Resources/lib/tcl8.6/auto.tcl</key>
 		<data>
@@ -2682,39 +2658,15 @@
 		</data>
 		<key>Resources/site.pyc</key>
 		<data>
-		Rd8YG9SSvmyZMjKsOSoGZfB5mvI=
+		TOTIDW9VoE8f6GQK9uGaOM/FFuU=
+		</data>
+		<key>Resources/src/.DS_Store</key>
+		<data>
+		G4G0uTIrpLPeomeT59mjnBUe+ys=
 		</data>
 		<key>Resources/src/__init__.py</key>
 		<data>
 		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
-		</data>
-		<key>Resources/src/__pycache__/__init__.cpython-311.pyc</key>
-		<data>
-		/CyV7dNZ9MG9luFGU8i73UYbNWs=
-		</data>
-		<key>Resources/src/__pycache__/config_manager.cpython-311.pyc</key>
-		<data>
-		pSjwAyTtPzXNUq/UQgt8mMuXJrg=
-		</data>
-		<key>Resources/src/__pycache__/dialogs.cpython-311.pyc</key>
-		<data>
-		TlXVis5BaI+XgBOD/w0pC5mkccM=
-		</data>
-		<key>Resources/src/__pycache__/gui_manager.cpython-311.pyc</key>
-		<data>
-		g1fzhHnlTm6r4Ur2HgPKGKiE7C8=
-		</data>
-		<key>Resources/src/__pycache__/main.cpython-311.pyc</key>
-		<data>
-		ZPjlUUzevrRu56CmzSubUszZmnk=
-		</data>
-		<key>Resources/src/__pycache__/menubar_app.cpython-311.pyc</key>
-		<data>
-		8dAMZAdT3F20MutGQ4VhL/n4m2U=
-		</data>
-		<key>Resources/src/__pycache__/mount_manager.cpython-311.pyc</key>
-		<data>
-		r/10JolrR13O1tfkuFIH2Vy/mSI=
 		</data>
 		<key>Resources/src/config_manager.py</key>
 		<data>
@@ -2726,7 +2678,7 @@
 		</data>
 		<key>Resources/src/gui_manager.py</key>
 		<data>
-		fajS8fX0HkY3WcFJ980tysjrFVs=
+		YXghf7pnRxp5bkyx1Lb3Pb2XQ4I=
 		</data>
 		<key>Resources/src/main.py</key>
 		<data>
@@ -2734,11 +2686,11 @@
 		</data>
 		<key>Resources/src/menubar_app.py</key>
 		<data>
-		8T6bQ9b4bHr5EMJ5i3h8/1sXu+U=
+		DzA14ACoEww5F2fRDoMQG4hfH+M=
 		</data>
 		<key>Resources/src/mount_manager.py</key>
 		<data>
-		C+G+b1AL+yo5OLkdRKndHbNyNrU=
+		yiXQJ1ukslE7UYhHzXDtGylFcRc=
 		</data>
 		<key>Resources/zlib.cpython-311-darwin.so</key>
 		<data>
@@ -4511,83 +4463,6 @@
 			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
 			</data>
 		</dict>
-		<key>Resources/lib/python3.11/src/__pycache__/__init__.cpython-311.pyc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			/CyV7dNZ9MG9luFGU8i73UYbNWs=
-			</data>
-			<key>hash2</key>
-			<data>
-			HKlAztMUnojI4Ga93hPjF0ItZsAzgdRKnVeKqqIrOuU=
-			</data>
-		</dict>
-		<key>Resources/lib/python3.11/src/__pycache__/config_manager.cpython-311.pyc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			pSjwAyTtPzXNUq/UQgt8mMuXJrg=
-			</data>
-			<key>hash2</key>
-			<data>
-			cPsOuKSVqWodhEpyBL/BXrBwhWTeSINmuVpY7xlYu+o=
-			</data>
-		</dict>
-		<key>Resources/lib/python3.11/src/__pycache__/dialogs.cpython-311.pyc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			TlXVis5BaI+XgBOD/w0pC5mkccM=
-			</data>
-			<key>hash2</key>
-			<data>
-			UEMrCmluiGSjz/+AY+dwcgrnmpn53C+5BtZo3zybbBo=
-			</data>
-		</dict>
-		<key>Resources/lib/python3.11/src/__pycache__/gui_manager.cpython-311.pyc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			g1fzhHnlTm6r4Ur2HgPKGKiE7C8=
-			</data>
-			<key>hash2</key>
-			<data>
-			DIYm1VdkRKCWjaC/HrKZilEaFDGZ2Sv2QB/n4u7VK84=
-			</data>
-		</dict>
-		<key>Resources/lib/python3.11/src/__pycache__/main.cpython-311.pyc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ZPjlUUzevrRu56CmzSubUszZmnk=
-			</data>
-			<key>hash2</key>
-			<data>
-			sgFdiebelRV/xu1MM7j8J5StwM6hK2pcW2NTN4nR4SU=
-			</data>
-		</dict>
-		<key>Resources/lib/python3.11/src/__pycache__/menubar_app.cpython-311.pyc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			8dAMZAdT3F20MutGQ4VhL/n4m2U=
-			</data>
-			<key>hash2</key>
-			<data>
-			//SEqBJNp+kWo0j3Sj8W0YbSptnOHxPEwR0KFovGwyk=
-			</data>
-		</dict>
-		<key>Resources/lib/python3.11/src/__pycache__/mount_manager.cpython-311.pyc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			r/10JolrR13O1tfkuFIH2Vy/mSI=
-			</data>
-			<key>hash2</key>
-			<data>
-			nSJiSw50l6g1sR2s/noC2qNKG1bLsTRTy9etZ7/UGvU=
-			</data>
-		</dict>
 		<key>Resources/lib/python3.11/src/config_manager.py</key>
 		<dict>
 			<key>hash</key>
@@ -4614,11 +4489,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fajS8fX0HkY3WcFJ980tysjrFVs=
+			YXghf7pnRxp5bkyx1Lb3Pb2XQ4I=
 			</data>
 			<key>hash2</key>
 			<data>
-			D6YQWPqQdubktJ4pNwQ2Sf9CkdGjPgpDgF7wcxLBEqE=
+			xylO2HrDwqNAkrlMxLrgPI2LIutN3Q9qwSsEjys8nYs=
 			</data>
 		</dict>
 		<key>Resources/lib/python3.11/src/main.py</key>
@@ -4636,22 +4511,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8T6bQ9b4bHr5EMJ5i3h8/1sXu+U=
+			DzA14ACoEww5F2fRDoMQG4hfH+M=
 			</data>
 			<key>hash2</key>
 			<data>
-			aHoePaY0TYKisHsTNJCMBdYfjW3T4Q0R7cyvgD+OvMg=
+			HCQ0fDebK3wkARHGx1otPeWJ4FIYtRIP5jAeT7Z9Xu0=
 			</data>
 		</dict>
 		<key>Resources/lib/python3.11/src/mount_manager.py</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			C+G+b1AL+yo5OLkdRKndHbNyNrU=
+			yiXQJ1ukslE7UYhHzXDtGylFcRc=
 			</data>
 			<key>hash2</key>
 			<data>
-			RvTCgCHkkOP6NT3YZvUFsA2qrfAx2yd43g6UEFeC4G4=
+			HUXVsQavpFHevLgFvnWqYOEWhYBUYTbsA60bokqIz1E=
 			</data>
 		</dict>
 		<key>Resources/lib/python3.11/tkinter/__init__.py</key>
@@ -5758,11 +5633,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			i04ejetsAIkujK0e1T1BSrW2XZM=
+			XaBVdWVoFHkXROEmv/TBFGuzAlA=
 			</data>
 			<key>hash2</key>
 			<data>
-			s4D9gLL/5tm0r8nJZLsuACwK37ym7qq04Dgt+kHdhJE=
+			Ds+IM0tdJMJLxEc3Fm6exKUQAQeOTUN4/wqOBq6sCtk=
 			</data>
 		</dict>
 		<key>Resources/lib/tcl8.6/auto.tcl</key>
@@ -10169,11 +10044,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Rd8YG9SSvmyZMjKsOSoGZfB5mvI=
+			TOTIDW9VoE8f6GQK9uGaOM/FFuU=
 			</data>
 			<key>hash2</key>
 			<data>
-			rX6tF7jh5/vP8DJOrhyp7WT0gMufxZ9o19BDvOZVC0M=
+			Jm8RSE6yT27AjgwLvqzLwcXx1OxVcJ+9+GfsU1TQndI=
 			</data>
 		</dict>
 		<key>Resources/src/__init__.py</key>
@@ -10185,83 +10060,6 @@
 			<key>hash2</key>
 			<data>
 			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
-			</data>
-		</dict>
-		<key>Resources/src/__pycache__/__init__.cpython-311.pyc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			/CyV7dNZ9MG9luFGU8i73UYbNWs=
-			</data>
-			<key>hash2</key>
-			<data>
-			HKlAztMUnojI4Ga93hPjF0ItZsAzgdRKnVeKqqIrOuU=
-			</data>
-		</dict>
-		<key>Resources/src/__pycache__/config_manager.cpython-311.pyc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			pSjwAyTtPzXNUq/UQgt8mMuXJrg=
-			</data>
-			<key>hash2</key>
-			<data>
-			cPsOuKSVqWodhEpyBL/BXrBwhWTeSINmuVpY7xlYu+o=
-			</data>
-		</dict>
-		<key>Resources/src/__pycache__/dialogs.cpython-311.pyc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			TlXVis5BaI+XgBOD/w0pC5mkccM=
-			</data>
-			<key>hash2</key>
-			<data>
-			UEMrCmluiGSjz/+AY+dwcgrnmpn53C+5BtZo3zybbBo=
-			</data>
-		</dict>
-		<key>Resources/src/__pycache__/gui_manager.cpython-311.pyc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			g1fzhHnlTm6r4Ur2HgPKGKiE7C8=
-			</data>
-			<key>hash2</key>
-			<data>
-			DIYm1VdkRKCWjaC/HrKZilEaFDGZ2Sv2QB/n4u7VK84=
-			</data>
-		</dict>
-		<key>Resources/src/__pycache__/main.cpython-311.pyc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ZPjlUUzevrRu56CmzSubUszZmnk=
-			</data>
-			<key>hash2</key>
-			<data>
-			sgFdiebelRV/xu1MM7j8J5StwM6hK2pcW2NTN4nR4SU=
-			</data>
-		</dict>
-		<key>Resources/src/__pycache__/menubar_app.cpython-311.pyc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			8dAMZAdT3F20MutGQ4VhL/n4m2U=
-			</data>
-			<key>hash2</key>
-			<data>
-			//SEqBJNp+kWo0j3Sj8W0YbSptnOHxPEwR0KFovGwyk=
-			</data>
-		</dict>
-		<key>Resources/src/__pycache__/mount_manager.cpython-311.pyc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			r/10JolrR13O1tfkuFIH2Vy/mSI=
-			</data>
-			<key>hash2</key>
-			<data>
-			nSJiSw50l6g1sR2s/noC2qNKG1bLsTRTy9etZ7/UGvU=
 			</data>
 		</dict>
 		<key>Resources/src/config_manager.py</key>
@@ -10290,11 +10088,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fajS8fX0HkY3WcFJ980tysjrFVs=
+			YXghf7pnRxp5bkyx1Lb3Pb2XQ4I=
 			</data>
 			<key>hash2</key>
 			<data>
-			D6YQWPqQdubktJ4pNwQ2Sf9CkdGjPgpDgF7wcxLBEqE=
+			xylO2HrDwqNAkrlMxLrgPI2LIutN3Q9qwSsEjys8nYs=
 			</data>
 		</dict>
 		<key>Resources/src/main.py</key>
@@ -10312,22 +10110,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8T6bQ9b4bHr5EMJ5i3h8/1sXu+U=
+			DzA14ACoEww5F2fRDoMQG4hfH+M=
 			</data>
 			<key>hash2</key>
 			<data>
-			aHoePaY0TYKisHsTNJCMBdYfjW3T4Q0R7cyvgD+OvMg=
+			HCQ0fDebK3wkARHGx1otPeWJ4FIYtRIP5jAeT7Z9Xu0=
 			</data>
 		</dict>
 		<key>Resources/src/mount_manager.py</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			C+G+b1AL+yo5OLkdRKndHbNyNrU=
+			yiXQJ1ukslE7UYhHzXDtGylFcRc=
 			</data>
 			<key>hash2</key>
 			<data>
-			RvTCgCHkkOP6NT3YZvUFsA2qrfAx2yd43g6UEFeC4G4=
+			HUXVsQavpFHevLgFvnWqYOEWhYBUYTbsA60bokqIz1E=
 			</data>
 		</dict>
 		<key>Resources/zlib.cpython-311-darwin.so</key>
