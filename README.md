@@ -1,6 +1,6 @@
 # SMB Manager for macOS
 
-A powerful and user-friendly macOS application that provides simple management of SMB network shares through both a GUI interface and a menubar app. Perfect for users who need to regularly connect to SMB shares and want a streamlined experience.
+A powerful and user-friendly macOS application that provides simple management of SMB network shares through both a GUI interface and a menubar app. Perfect for users who need to regularly connect to SMB shares and want a streamlined experience. It lets you connect to a nas that uses a coudflared or directly to a ip/hostname. 
 
 ## Features
 
