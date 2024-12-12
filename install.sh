@@ -110,5 +110,4 @@ main() {
     print_status "Installation complete! You can find SMB Manager in your Applications folder." "$GREEN"
     print_status "To start the application, open finder and navigate to ~/Applications/SMB Manager.app" "$GREEN"
 }
-
 main
