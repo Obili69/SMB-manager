@@ -10,23 +10,6 @@ print_status() {
     echo -e "${2}$1${NC}"
 }
 
-# Get the localized Applications folder path
-get_applications_path() {
-    local apps_path="$(osascript -e 'POSIX path of (path to applications folder)')"
-    
-    if [ -z "$apps_path" ]; then
-        if [ -d "/Applications" ]; then
-            echo "/Applications"
-        elif [ -d "/Programme" ]; then
-            echo "/Programme"
-        else
-            echo "/Applications"
-        fi
-    else
-        echo "$apps_path"
-    fi
-}
-
 check_python_version() {
     if command -v python3 >/dev/null 2>&1; then
         major=$(python3 -c 'import sys; print(sys.version_info.major)')
@@ -41,10 +24,28 @@ check_python_version() {
 
 install_python_dependencies() {
     print_status "Installing Python dependencies..." "$YELLOW"
+    
+    # Create virtual environment
     python3 -m venv venv
     source venv/bin/activate
+    
+    # Upgrade pip and install build tools
     python3 -m pip install --upgrade pip
-    python3 -m pip install rumps keyring py2app setuptools wheel
+    python3 -m pip install --upgrade setuptools wheel
+    
+    # Install py2app separately first
+    python3 -m pip install py2app==0.28.6
+    
+    # Install main dependencies
+    python3 -m pip install \
+        rumps \
+        keyring \
+        pyobjc-core \
+        pyobjc-framework-Cocoa \
+        pyobjc-framework-Security \
+        setuptools \
+        wheel
+    
     if [ $? -eq 0 ]; then
         print_status "Python dependencies installed successfully!" "$GREEN"
     else
@@ -63,10 +64,17 @@ install_cloudflared() {
 
 build_application() {
     print_status "Building SMB Manager application..." "$YELLOW"
+    
     if [[ "$VIRTUAL_ENV" == "" ]]; then
         source venv/bin/activate
     fi
-    python3 setup_app.py py2app
+    
+    # Clean previous builds
+    rm -rf build dist
+    
+    # Build the application
+    python3 setup_app.py py2app -A
+    
     if [ $? -eq 0 ]; then
         print_status "Application built successfully!" "$GREEN"
     else
@@ -79,8 +87,7 @@ install_application() {
     print_status "Installing application..." "$YELLOW"
     
     # Get the localized Applications folder path
-    APPLICATIONS_PATH=$(get_applications_path)
-    print_status "Using Applications folder: $APPLICATIONS_PATH" "$YELLOW"
+    APPLICATIONS_PATH="/Applications"
     
     if [ -d "dist/SMB Manager.app" ]; then
         # Remove existing application if it exists
@@ -90,6 +97,7 @@ install_application() {
         cp -R "dist/SMB Manager.app" "$APPLICATIONS_PATH/"
         
         if [ $? -eq 0 ]; then
+            chmod -R 755 "$APPLICATIONS_PATH/SMB Manager.app"
             print_status "Application installed successfully in $APPLICATIONS_PATH!" "$GREEN"
         else
             print_status "Failed to copy application to $APPLICATIONS_PATH" "$RED"
@@ -142,10 +150,8 @@ main() {
     cd - > /dev/null
     rm -rf "$tmp_dir"
     
-    # Get the localized path for the success message
-    APPLICATIONS_PATH=$(get_applications_path)
-    print_status "Installation complete! You can find SMB Manager in your $APPLICATIONS_PATH folder." "$GREEN"
-    print_status "To start the application, open Finder and navigate to $APPLICATIONS_PATH/SMB Manager.app" "$GREEN"
+    print_status "Installation complete! You can find SMB Manager in your Applications folder." "$GREEN"
+    print_status "To start the application, open Finder and navigate to /Applications/SMB Manager.app" "$GREEN"
 }
 
 main
